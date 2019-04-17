@@ -1,0 +1,53 @@
+﻿@model vehicles.Models.VehicleRegistration
+
+@{
+    ViewData["Title"] = "Register";
+}
+
+<h2>Register</h2>
+<h4>Vehicle Registration</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="OwnerID" class="control-label">Owner ID</label>
+                <input asp-for="OwnerID" class="form-control" />
+                <span asp-validation-for="OwnerID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EmailAddress" class="control-label">Email Address</label>
+                <input asp-for="EmailAddress" class="form-control" />
+                <span asp-validation-for="EmailAddress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Vehicle" class="control-label"></label>
+                <input asp-for="Vehicle" class="form-control" />
+                <span asp-validation-for="Vehicle" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateOfRegistration" class="control-label">Date of Registration</label>
+                <input value="@DateTime.Now.ToString("dd/MM/yyyy")" name="DateOfRegistration" readonly class="form-control" />
+                <span asp-validation-for="DateOfRegistration" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Register" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+<p>
+    @if (ViewBag.Submitted)
+    {
+        // If the form was submitted
+    @ViewBag.Message
+    }
+</p>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
