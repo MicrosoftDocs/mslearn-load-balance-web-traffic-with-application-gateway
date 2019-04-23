@@ -44,7 +44,7 @@ namespace vehicles
             }
             else
             {
-                app.UseExceptionHandler("/Home/Error");
+                app.UseExceptionHandler("/VehicleRegistration/Error");
                 app.UseHsts();
             }
 
@@ -56,7 +56,7 @@ namespace vehicles
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=VehicleRegistration}/{action=Create}/{id?}");
             });
         }
     }
