@@ -1,0 +1,52 @@
+﻿@model licenses.Models.LicenseRenewal
+
+@{
+    ViewData["Title"] = "License Renewal";
+}
+
+<h2>License Renewal</h2>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="LicenseID" class="control-label">License ID</label>
+                <input asp-for="LicenseID" class="form-control" />
+                <span asp-validation-for="LicenseID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FirstName" class="control-label">First Name</label>
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LastName" class="control-label">Last Name</label>
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateOfRenewal" class="control-label">Date of Renewal</label>
+                <input value="@DateTime.Now.ToString("MM/dd/yyyy")" name="DateOfRenewal" class="form-control" />
+                <span asp-validation-for="DateOfRenewal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Renew" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+<p>
+    @if (ViewBag.Submitted)
+    {
+        // If the form was submitted
+    @ViewBag.Message
+    }
+</p>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
