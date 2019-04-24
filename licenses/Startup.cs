@@ -56,7 +56,7 @@ namespace licenses
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=LicenseRenewal}/{action=Create}/{id?}");
+                    template: "{controller=LicenseRenewal}/{action=Index}/{id?}");
             });
         }
     }
