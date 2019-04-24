@@ -33,7 +33,7 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="VehicleRegistration" asp-action="Create">Register</a></li>
+                    <li><a asp-area="" asp-controller="VehicleRegistration" asp-action="Create">Register a Vehicle</a></li>
                     <li><a asp-area="" asp-controller="VehicleRegistration" asp-action="About">About</a></li>
                     <li><a asp-area="" asp-controller="VehicleRegistration" asp-action="Contact">Contact</a></li>
                 </ul>
@@ -42,11 +42,11 @@
     </nav>
 
     <div class="container body-content">
-        <p>Server name - @Dns.GetHostName()</p>
         @RenderBody()
         <hr />
         <footer>
             <p>&copy; 2019 - Motor Vehicle Department</p>
+            <p>Server name - @Dns.GetHostName()</p>
         </footer>
     </div>
 

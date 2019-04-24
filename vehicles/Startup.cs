@@ -56,7 +56,7 @@ namespace vehicles
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=VehicleRegistration}/{action=Create}/{id?}");
+                    template: "{controller=VehicleRegistration}/{action=Index}/{id?}");
             });
         }
     }
